@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src='browser-detect.js' type='text/javascript'></script>
+<script type="text/javascript">
+// 속성 확인
+s = '';
+for(property in navigator) {
+	s += (property + ":" + navigator[s])
+}
+console.log(s);
+
+BrowserDetect.init();
+
+console.log(BrowserDetect.browser);
+console.log(BrowserDetect.version);
+console.log(BrowserDetect.OS);
+</script>
+</head>
+<body>
+</body>
+</html>

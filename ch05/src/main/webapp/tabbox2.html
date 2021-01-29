@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>리스트를 이용한 메뉴 만들기</title>
+<link href='css/tabbox.css' rel='stylesheet' type='text/css'/>
+<script type="text/javascript">
+// DOM Level 1 Event 처리 : element의 event attribute을 사용하는 방식
+// 1) HTML Tag에 이벤트 핸들러를 적용하는 방식
+// 2) JavaScript(DOM API) 로만 작성하는 방법
+
+var current = null;
+
+var onTabClicked = function() {
+	// unselect
+	let liSelecteds = document.getElementsByClassName('selected');
+	(liSelecteds.length == 1) && (liSelecteds[0].className = '');
+	
+	// select
+	this.className = 'selected';
+}
+
+window.onload = function() {
+	let divTabBox = document.getElementsByClassName("tab-box")[0];
+	
+	let ulTabBox = divTabBox.childNodes[1]
+	let liTabs = ulTabBox.getElementsByTagName('li');
+	Array.prototype.forEach.call(liTabs, function(li) {
+		li.onclick = onTabClicked;
+	})
+}
+</script>
+</head>
+<body>
+<div class="tab-box">
+	<ul>
+        <li>메뉴 1</li>
+        <li>메뉴 2</li>
+        <li>메뉴 3</li>
+        <li>메뉴 4</li>
+        <li>메뉴 5</li>
+    </ul>
+    <div>
+    	탭뷰입니다.
+    </div>
+</div>    
+</body>
+</html>

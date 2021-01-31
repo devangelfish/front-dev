@@ -1,6 +1,6 @@
 # ch06
-
 ![브라우저](JS.png)  
+-
 **ex01.html, popup.html** - BOM(Browser Object Model) - window객체  
 **ex02.html** - BOM(Browser Object Model) - screen객체  
 **ex03.html** - BOM(Browser Object Model) - location객체  

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(function() {
+	$('button').click(function() {
+		$.ajax({
+			url: '/ch07/data.json',
+			async: true,	// default
+			type: 'get',
+			data: '',
+			// contentType: 'application/json', // data 속성에 post방식으로 데이터를 보낼 경우 데이터의 형식: application/json or text/html
+			dataType: 'json',					// response 형식
+			success: function(response) {
+				if(response.result != 'success') {
+					console.error(response.message);
+					return;
+				}
+				
+				// data 처리
+				let html = "";
+				response.data.forEach(function(d) {
+					html += ("<dt>" + d.title + "</dt>");
+					html += ("<dd>" + d.description + "</dd>");
+				});
+				
+				$('dl').append(html);
+			},
+			error: function(XHR, status, e) {
+				console.error(status + ":" + e)
+			}
+		});
+	});
+});
+</script>
+</head>
+<body>
+	<button>xml 가져오기</button>
+	<dl>
+	</dl>
+</body>
+</html>

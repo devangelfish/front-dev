@@ -1,4 +1,4 @@
-![image](https://www.notion.so/JavaScript-d3ded8fbd09647f9b50f78a214104596#d8b310263a1344e8a04f10068bc75150)
+![image](./front.png)
 
 # front-dev
 ch02 HTML 태그, CSS 선택자  
